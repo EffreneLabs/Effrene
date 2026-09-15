@@ -73,9 +73,22 @@
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255,197,61,0.35); }
 
   /* ---------- MARQUEE ---------- */
-  .marquee { background: var(--blue-electric); overflow: hidden; white-space: nowrap; padding: 16px 0; }
-  .marquee-track { display: inline-block; animation: scroll 22s linear infinite; }
-  .marquee-track span { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.15rem; color: var(--paper); margin-right: 14px; }
+  .marquee { background: var(--blue-electric); overflow: hidden; padding: 20px 0; position: relative; }
+  .marquee::before, .marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: clamp(24px, 6vw, 100px); z-index: 1; pointer-events: none; }
+  .marquee::before { left: 0; background: linear-gradient(to right, var(--blue-electric), transparent); }
+  .marquee::after { right: 0; background: linear-gradient(to left, var(--blue-electric), transparent); }
+  .marquee-track { display: flex; width: max-content; animation: scroll 40s linear infinite; }
+  .marquee-group { display: flex; flex-shrink: 0; align-items: center; justify-content: space-around; min-width: 100vw; }
+  .marquee-group span { display: flex; align-items: center; gap: 32px; padding-right: 32px; white-space: nowrap; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.15rem; color: var(--paper); }
+  .marquee-group span::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--amber-pop); flex-shrink: 0; }
+  .marquee:hover .marquee-track, .marquee:focus .marquee-track { animation-play-state: paused; }
+  .marquee:focus-visible { outline: 2px solid var(--amber-pop); outline-offset: -3px; }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee::before, .marquee::after { display: none; }
+    .marquee-track { width: 100%; }
+    .marquee-group { min-width: 0; width: 100%; flex-wrap: wrap; justify-content: center; gap: 16px 0; padding-left: 24px; }
+    .marquee-group[aria-hidden="true"] { display: none; }
+  }
   @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
   /* ---------- WHAT WE DO (intro + stat) ---------- */
@@ -166,14 +179,18 @@
   <div class="hero-inner">
     <h1>Some things shouldn't be held back.</h1>
     <p>We bring brilliant minds together,<br>to research, learn, and grow,<br>because excellence was never meant to be a solo pursuit.</p>
-    <a class="hero-cta btn-primary" href="mailto:abcd@gmail.com">Get in Touch</a>
+    <a class="hero-cta btn-primary" href="#join">Get in Touch</a>
   </div>
 </header>
 
-<div class="marquee">
+<div class="marquee" tabindex="0" role="region" aria-label="Our approach. Hover or focus to pause scrolling.">
   <div class="marquee-track">
-    <span>EFFRENE</span><span>/</span><span>COLLABORATE</span><span>/</span><span>RESEARCH</span><span>/</span><span>BUILD</span><span>/</span><span>EXCEL</span><span>/</span>
-    <span>EFFRENE</span><span>/</span><span>COLLABORATE</span><span>/</span><span>RESEARCH</span><span>/</span><span>BUILD</span><span>/</span><span>EXCEL</span><span>/</span>
+    <div class="marquee-group">
+      <span>COLLABORATE</span><span>EXPLORE</span><span>RESEARCH</span><span>BUILD</span><span>LEARN</span><span>GROW</span>
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <span>COLLABORATE</span><span>EXPLORE</span><span>RESEARCH</span><span>BUILD</span><span>LEARN</span><span>GROW</span>
+    </div>
   </div>
 </div>
 
@@ -181,7 +198,7 @@
   <div class="wrap work-intro-grid">
     <div>
       <h2>What We Do</h2>
-      <p><span class="line">We're a community of curious minds, open to anyone who wants to learn by doing.</span><span class="line">Together, we explore ideas that interest us: markets, behavior, trends, and open-ended questions, all grounded in real data.</span><span class="line">What we uncover doesn't stay on paper. We turn it into real projects and products we build ourselves, learning and growing with every idea we pursue.</span></p>
+      <p><span class="line">We're a community of curious minds, open to anyone who's eager to learn by doing.</span><span class="line">Together, we dig into what interests us: markets, behavior, trends, and open-ended questions, always grounded in real data, not assumptions.</span><span class="line">What we discover never stays on paper. We turn it into real projects and products we build ourselves, learning and growing with every idea we chase.</span></p>
     </div>
     <div class="about-stat">
       <div class="num">3</div>
