@@ -148,6 +148,22 @@
   .join-item p { font-size: 0.98rem; color: rgba(21,21,43,0.75); line-height: 1.6; }
   @media (max-width: 800px) { .join-grid { grid-template-columns: 1fr; } }
 
+  /* ---------- FOUNDER ---------- */
+  .founder { padding: 100px 32px 120px; background: var(--paper); }
+  .founder-wrap { max-width: 760px; }
+  .founder h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 40px; }
+  .founder-letter {
+    background: var(--lavender-soft); border-radius: 20px; padding: 44px 40px;
+    border-left: 4px solid var(--blue-electric);
+  }
+  .founder-letter p { font-size: 1.05rem; line-height: 1.75; color: var(--ink-soft); margin-bottom: 18px; }
+  .founder-letter p:last-child { margin-bottom: 0; }
+  .founder-letter p:first-child,
+  .founder-letter p:last-child { color: var(--ink); font-weight: 500; }
+  @media (max-width: 700px) {
+    .founder-letter { padding: 32px 24px; }
+  }
+
   /* ---------- FOOTER ---------- */
   footer {
     background: var(--indigo-deep); color: var(--paper-soft); padding: 28px 32px 40px; font-size: 0.88rem;
@@ -198,7 +214,7 @@
   <div class="wrap work-intro-grid">
     <div>
       <h2>What We Do</h2>
-      <p><span class="line">We're a community of curious minds, open to anyone who's eager to learn by doing.</span><span class="line">Together, we dig into what interests us: markets, behavior, trends, and open-ended questions, always grounded in real data, not assumptions.</span><span class="line">What we discover never stays on paper. We turn it into real projects and products we build ourselves, learning and growing with every idea we chase.</span></p>
+      <p><span class="line">We're a community of curious minds, open to anyone who's eager to learn by doing.</span><span class="line">Together, we dig into what interests us: markets, behavior, trends, and open-ended questions, always grounded in real data.</span><span class="line">We turn what we discover into real projects and products we build ourselves, learning and growing with every idea we chase.</span></p>
     </div>
     <div class="about-stat">
       <div class="num">3</div>
@@ -229,7 +245,7 @@
 
 <section class="values" id="values">
   <div class="wrap">
-    <h2>What holds it together</h2>
+    <h2>What holds Effrene together</h2>
     <div class="value-row">
       <div class="value-name">Integrity</div>
       <div class="value-desc">We say what we mean and do what we say, through collaboration.</div>
@@ -254,17 +270,32 @@
     <div>
       <h2>Let's build something.</h2>
       <p class="join-sub">Bring your ideas, your ambition, and yourself.</p>
-      <a class="btn-primary" href="mailto:abcd@gmail.com">Get in Touch</a>
+      <a class="btn-primary" href="mailto:effrenelabs@gmail.com">Mail us at effrenelabs@gmail.com</a>
     </div>
     <div class="join-list">
       <div class="join-item">
         <h4>All-rounder exposure</h4>
-        <p>One role, two worlds — research, and development. Rare breadth for an early career.</p>
+        <p>One role, two worlds: research and development. Rare breadth for an early career.</p>
       </div>
       <div class="join-item">
         <h4>Real ownership, from day one</h4>
         <p>You'll work directly with the founder, not get lost in layers of process.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="founder">
+  <div class="wrap founder-wrap">
+    <h2>A little about the founder</h2>
+    <div class="founder-letter">
+      <p>Hello there!</p>
+      <p>I'm a recruiter at one of the top tech IT firms, with 6+ years of experience in the field.</p>
+      <p>Over the years, I've received countless messages on LinkedIn and via email from people looking for job opportunities. Unfortunately, I haven't been able to help most of them, since our company (like every company) has certain expectations for hiring.</p>
+      <p>The most common roadblock: companies want people with experience, and people need opportunities to gain that experience.</p>
+      <p>I've been thinking about taking an initiative to bridge that gap; bring people together, set up a platform, learn as a group, and help each other execute so people can upskill and eventually monetize those skills.</p>
+      <p>This isn't about profit. I just want to put my experience to use so people can reach their full potential.</p>
+      <p>Cheers!</p>
     </div>
   </div>
 </section>
